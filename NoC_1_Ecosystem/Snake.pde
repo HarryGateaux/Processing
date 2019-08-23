@@ -22,8 +22,9 @@ class Snake {
   void update() {
 
     /*you can't set temp = location, because location is an object and that would be pass by reference, thus every value in tail would be the latest value
-     however the attributes of location are primitives and thus pass by copy*/
-    PVector temp = new PVector(location.x, location.y);
+     however the attributes of location are primitives and thus pass by copy, I have commented out this line and used get() instead which makes a copy*/
+    PVector temp = location.get();
+    //PVector temp = new PVector(location.x, location.y);
     //adds latest location to end of the list
     tail.add(temp);
     //limits tail to tailLength units
