@@ -26,6 +26,7 @@ class Particle {
     angle += 2;
     velocity.add(acceleration);
     location.add(velocity);
+    acceleration.mult(0); //stops acc accumulating
     lifespan -= 2.0;
   }
  

@@ -26,6 +26,7 @@ class Particle {
     angle += 2;
     velocity.add(acceleration);
     location.add(velocity);
+    acceleration.mult(0); //stops acc accumulating
     lifespan -= 2.0;
   }
  
@@ -35,8 +36,9 @@ class Particle {
     pushMatrix();
     translate(location.x, location.y);
     rotate(radians(angle));
-    rectMode(CENTER);
-    rect(0,0,8,8);
+    imageMode(CENTER);
+    tint(100, 100, 255,lifespan);
+    image(img,0,0);
     popMatrix();
   }
   

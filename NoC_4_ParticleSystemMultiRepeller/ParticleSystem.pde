@@ -32,7 +32,7 @@ class ParticleSystem {
   }
 
   void display() {
-  
+
     Iterator<Particle> it = particles.iterator();
 
     while (it.hasNext()) {
@@ -49,6 +49,15 @@ class ParticleSystem {
       p.applyForce(f);
     }
   }
+
+  void applyRepeller(Repeller r) {
+    for (Particle p : particles) {
+      PVector force = r.repel(p);
+      p.applyForce(force);
+    }
+  }
+
+
   boolean isOver() {
     if (pop > maxPop) {
       return true;

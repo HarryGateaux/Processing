@@ -10,7 +10,9 @@ class Circular extends Particle {
     fill(100, 255, 100, lifespan);
     pushMatrix();
     translate(location.x, location.y);
-    ellipse(0, 0, 8, 8);
+    imageMode(CENTER);
+    tint(100, 255, 100,lifespan);
+    image(img,0,0);
     popMatrix();
   }
 }
@@ -27,7 +29,9 @@ class Triangular extends Particle {
     pushMatrix();
     translate(location.x, location.y);
     rotate(radians(angle));
-    triangle(0, -4, 4, 4, -4, 4);
+    imageMode(CENTER);
+    tint(255, 100, 100,lifespan);
+    image(img,0,0);
     popMatrix();
   }
 }
