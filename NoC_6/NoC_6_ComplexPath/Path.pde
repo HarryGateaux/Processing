@@ -17,6 +17,15 @@ class Path {
     points.add(new PVector(x, y));
   }
 
+  //void update() {
+    
+  // for(PVector p : points){
+  //   PVector random = new PVector(random(-5, 5), random(-5, 5));
+  //   p.add(random);
+     
+  // }
+    
+  }
   void display() {
 
 

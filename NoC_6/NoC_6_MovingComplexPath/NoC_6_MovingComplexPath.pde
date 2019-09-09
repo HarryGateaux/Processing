@@ -18,6 +18,7 @@ void setup() {
 void draw() {
   background(255);
 
+  path.update();
   path.display();
 
   boid.follow(path);

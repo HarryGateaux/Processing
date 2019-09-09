@@ -69,7 +69,8 @@ class Boid {
       PVector normalPoint = getNormalPoint(predict, a, b);
 
       //check if normalPoint is within line segment, if not set to end point
-      if (normalPoint.x < a.x || normalPoint.x > b.x) {
+      //without using min/max forces the path direction to be to the right
+      if (normalPoint.x < min(a.x, b.x) || normalPoint.x > max(a.x, b.x)) {
 
         normalPoint = b.copy();
       }
