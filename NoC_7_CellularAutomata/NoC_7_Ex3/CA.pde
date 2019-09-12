@@ -17,10 +17,9 @@ class CA {
       for (int i = 0; i < cells.length; i++) {
 
         int colour = (cells[i] == 0) ? 255 : 0;
-        //stroke(colour);
-        float angle = map(colour, 255, 0, PI/2, 0);
-        //rect(i * w, generation * w, w, w);
-        line(i * w, generation * w, (i + 1 * sin(angle)) * w, (generation + 1 * cos(angle)) * w);
+        fill(colour);
+        rect(i * w, generation * w, w, w);
+
       }
 
     if (generation < height/w) generate();
