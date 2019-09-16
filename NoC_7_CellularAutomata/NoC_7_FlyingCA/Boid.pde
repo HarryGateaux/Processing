@@ -3,6 +3,7 @@ class Boid {
   float r, maxspeed, maxforce;
   PVector pos, vel, acc, desired, steer;
   int state;
+  GameOfLife gol;
 
   Boid () {
 
@@ -13,6 +14,8 @@ class Boid {
     maxspeed = 2;
     maxforce = 0.1;
     state = (random(100) < 10) ? 1 : 0;
+    gol = new GameOfLife(50, 50);
+    gol.create();
   }
 
   void update() {
@@ -81,11 +84,9 @@ class Boid {
     pushMatrix();
     translate(pos.x, pos.y);
     rotate(theta);
-    beginShape();
-    vertex(0, -r * 2);
-    vertex(-r, r * 2);
-    vertex(r, r * 2);
-    endShape(CLOSE);
+    gol.generate();
+    gol.display();
+    
     popMatrix();
   }
 

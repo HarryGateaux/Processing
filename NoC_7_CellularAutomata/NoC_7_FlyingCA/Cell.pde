@@ -19,16 +19,7 @@ class Cell {
 
   void display() {
 
-//    //If the cell is born, color it blue!
-    if (previous == 0 && state == 1) fill(0, 0, 255);
-    else if (state == 1) fill(0);
-
-//    //If the cell dies, color it red!
-    else if (previous == 1 && state == 0) fill(255, 0, 0);
-    else fill(255);
-
-
-    //fill(255);
+    fill(255 - 255 * state);
     rect(x, y,  w, h);
   }
 

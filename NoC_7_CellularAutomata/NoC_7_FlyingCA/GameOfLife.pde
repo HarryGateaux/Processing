@@ -6,11 +6,11 @@ class GameOfLife {
   Cell[][] board;
   int neighbours_alive;
 
-  GameOfLife() {
-    w = 10;
+  GameOfLife(int wi, int hi) {
+    w = 3;
     h = w;
-    rows = height/int(h);
-    cols = width/int(w);
+    rows = hi/int(h);
+    cols = wi/int(w);
     board = new Cell[rows][cols];
   }
 
@@ -25,8 +25,6 @@ class GameOfLife {
   }
 
   void generate() {
-
-    if (keyPressed == true) {
 
       for ( int i = 0; i < rows; i++) {
         for ( int j = 0; j < cols; j++) {
@@ -53,7 +51,7 @@ class GameOfLife {
           else if ((board[row][col].state == 1) && (neighbours_alive >  3)) board[row][col].newState(0);
           else if ((board[row][col].state == 0) && (neighbours_alive == 3)) board[row][col].newState(1);
         }
-      }
+      
     }
   }
 

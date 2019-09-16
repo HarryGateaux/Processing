@@ -5,7 +5,7 @@ int n;
 void setup() {
 
   size(640, 640);
-  n = 100;
+  n = 10;
   boids = new ArrayList<Boid>();
 
   for (int i = 0; i < n; i++) {
